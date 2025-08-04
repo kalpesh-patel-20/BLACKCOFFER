@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <div class="container flex">
+        <div class="login-page flex">
+
+            <form method="POST">
+                {% csrf_token %}
+
+                {% if messages %}
+                <div class="message-container">
+                    {% for message in messages %}
+                    <div class="message {% if message.tags == 'error' %}error{% else %}success{% endif %}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+
+                <div class="link">
+                    <button type="submit" class="login">Login</button>
+                    <!-- <a href="{% url 'forgot-password' %}" class="forgot">Forgot password?</a> -->
+                </div>
+                <hr>
+                <div class="button">
+                    <a href="{% url 'register' %}">Create new account</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
