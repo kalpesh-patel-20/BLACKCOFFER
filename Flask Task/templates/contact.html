@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f4f8;
+            text-align: center;
+        }
+
+        input,
+        textarea {
+            width: 60%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005fa3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>📩 Contact Us</h1>
+    <form method="POST" action="/contact">
+        <input type="email" name="email" placeholder="Your email" required><br><br>
+        <textarea name="message" rows="5" placeholder="Your message..." required></textarea><br><br>
+        <input type="submit" value="Send Message">
+    </form>
+    <br>
+    <a href="/">← Back to Home</a>
+</body>
+
+</html>
