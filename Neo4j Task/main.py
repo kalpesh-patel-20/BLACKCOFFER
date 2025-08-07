@@ -3,7 +3,7 @@ import pandas as pd
 
 URI = "bolt://localhost:7687"
 USERNAME = "neo4j"
-PASSWORD = "Kpatel#3668"
+PASSWORD = "your_password"
 
 driver = GraphDatabase.driver(URI, auth=(USERNAME, PASSWORD))
 
